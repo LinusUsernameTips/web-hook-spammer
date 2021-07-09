@@ -4,7 +4,7 @@ from colorama import Fore
 print(Fore.CYAN + "LUTS Webhook Spammer (Cntrl C to stop)")
 webhook = input(Fore.CYAN+ 'Paste webhook here : ')
 req = requests.get(webhook)
-if "Unknown Webhook" in req.text:
+if "Unknown Webhook" in req.text or ', "channel_id":' not in req.text:
   print(Fore.RED + 'Invalid Webhook.')
   input()
 message = input(Fore.CYAN+ 'What message to spam? : ')
