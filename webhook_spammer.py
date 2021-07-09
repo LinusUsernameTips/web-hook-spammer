@@ -7,6 +7,7 @@ req = requests.get(webhook)
 if "Unknown Webhook" in req.text or ', "channel_id":' not in req.text:
   print(Fore.RED + 'Invalid Webhook.')
   input()
+  quit()
 message = input(Fore.CYAN+ 'What message to spam? : ')
 username = input(Fore.CYAN+ 'Input the bots desired username : ')
 data = {"content": message,
